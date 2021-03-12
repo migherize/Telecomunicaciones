@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobiles</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/estilos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script defer src="Js/index.js"></script>
+</head>
+<body>
+    
+<section class="hero is-dark is-large">
+    <div class="hero-head">
+      <nav class="navbar">
+        <div class="container">
+          <div class="navbar-brand">
+            <a class="navbar-item">
+              <img src="https://bulma.io/images/bulma-type-white.png" alt="Logo">
+            </a>
+            <span class="navbar-burger" data-target="navbarMenuHeroB">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </div>
+          <div id="navbarMenuHeroB" class="navbar-menu">
+            <div class="navbar-end">
+                <a class="navbar-item " href="internet.html">
+                  Internet
+                </a>
+                <a class="navbar-item" href="tv.html">
+                  Tv
+                </a>
+                <a class="navbar-item is-active" href="mobiles.html">
+                  Mobiles
+                </a>
+               <!--
+                   <span class="navbar-item">
+                  <a class="button is-info is-inverted">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Download</span>
+                  </a>
+                </span>
+              -->
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  
+    <div class="hero-body" style="padding-top: 100px;">
+      <div class="main">
+          <div class="columns">
+              <div class="column is-2">
+                <aside class="menu ">
+                  <p class="menu-label">
+                    General
+                 </p>
+                  <ul class="menu-list">
+                      <li><a href="internet.html">Internet</a></li>
+                      <li><a href="tv.html">Tv</a></li>
+                      <li><a class="is-active">Mobiles</a></li>
+                  </ul>
+                      <p class="menu-label">
+                        Administration
+                      </p>
+                      <ul class="menu-list">
+                        <li>
+                          <a class="is-active">Internet</a>
+                          <ul>
+                            <li><a href="">AT&T</a></li>
+                            <li><a href="">DIRECTV</a></li>
+                            <li><a href="">DISH</a></li>
+                            <li><a href="">XFINITY</a></li>
+                          </ul>
+                        </li>
+                        <li>
+                          <a class="is-active">TV</a>
+                          <ul>
+                            <li><a href="">AT&T TV</a></li>
+                            <li><a href="">XFINITY</a></li>
+                          </ul>
+                        </li>
+                        <li>
+                          <a class="is-active">TELEFONIA</a>
+                          <ul>
+                            <li><a href="at&t_mobiles.html">AT&T</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="">GOOGLE MAPS</a></li>
+                      </ul>
+                      <p class="menu-label">
+                        Transactions
+                      </p>
+                      <ul class="menu-list">
+                        <li><a href="">DATOS A SOLICITAR</a></li>
+                      </ul>
+              </aside>
+              </div>
+              <div class="column is-10">
+                <p class="title" style="text-align: center;">
+                    INFORMACION SOBRE MÓVILES AT&T
+                  </p>
+                <section class="hero">
+                  <div class="principal">
+                    <p class="title" >
+                      SPEECH
+                      <button onclick="muestra_oculta('contenido')"  class="button is-primary is-light is-small" style="margin-left: 50px;float: right;">+</button>
+                    </p>
+                  </div>
+                    <div id="contenido">
+                      <p class="subtitle">
+                        <p>  
+                          Buen día, te habla ------- tu asesor en telecomunicaciones y servicios para el hogar. ¿Cómo estás el día de hoy?   </p>
+                        </p>
+                        <br>
+                        <p>
+                            Excelente! Te estoy llamando ya que por acá tenemos que en algún momento mostraste interés sobre equipos móviles ¿correcto? Te gusta más iPhone o Samsung? 
+                        </p>
+                        <br>
+                        <p>
+                          Ahora mismo tenemos 700$ y 350$ de descuento por la actualización de tus equipos. 
+                        </p>
+                        <br>
+                        <p>
+                          ¿Qué equipos tienes (marcas/ modelos)?
+                        </p><br>
+                        <p>
+                          Perfecto... ese equipo aplica para xxx$ de descuento. Coméntame con cual compañía estás? Cuánto pagas?
+                        </p><br>
+                        <p>
+                          Excelente! Es solo su línea?
+                        </p><br>
+                        <p>
+                          Bien, nosotros te  colocaremos con el plan xxx y quedarías pagando solo xxx$
+                        </p><br>
+                        <p>
+                          Disfrutarás de los siguientes beneficios: 
+                        </p>
+                        <br>
+                        <p class="title is-4">
+                            NEXT UP
+                        </p>
+                        <p>
+                           5$ + el mes durante 30 meses una vez que se pague el 50% del precio original.
+                        </p>
+                        <br>
+                      </p>
+                    </div>
+                </section>
+                <section class="hero">
+                    <section class="hero">
+                        <div class="principal">
+                          <p class="title">
+                            Preguntas de Sondeo
+                            <button onclick="muestra_oculta('contenido3')"  class="button is-primary is-light is-small" style="margin-left: 50px;float: right;">+</button>
+                          </p>
+                        </div>
+                        <div id="contenido3" class="">
+                            <p class="subtitle">
+                              <p>  
+                               1) ¿Que proveedor tiene actualmente?</p>
+                              </p>
+                              <br>
+                              <p>
+                                2) Cuantas lineas tiene a su nombre?
+                              </p>
+                              <br>
+                              <p>
+                               3) Cuanto paga por estas lineas
+                              </p>
+                              <br>
+                              <p>
+                                4) Que equipos y modelos de celular tiene?
+                               </p>
+                              <br>
+                              <p>
+                                  5) Le gusta mas IPhone o Samsung?
+                              </p>
+                              <br>
+                            </p>
+                            <p class="subtitle" >
+                                <p class="title is-4">
+                                    Preguntas de Adicionales
+                                </p>
+                                <p style="margin-left:10px;">
+                                    1) Tiene equipos financiados con su operador?
+                                   </p>
+                                  <br>
+                                  <p style="margin-left:10px;">
+                                      2) Se encuentra en buenas Condiciones sus Equipos?
+                                  </p>
+                                  <br>
+                            </p>
+                          </div>
+                      </section>
+                  <div class="principal">
+                    <p class="title">
+                      Precios
+                      <button onclick="muestra_oculta('contenido2')"  class="button is-primary is-light is-small" style="margin-left: 50px;float: right;">+</button>
+                    </p>
+                  </div>          
+                  <div id="contenido2">
+                    <p class="title">
+                      Lista de Precio
+                    </p>
+                    <p class="subtitle">
+                      <aside class="menu ">
+                        <p class="menu-label">
+                          General
+                       </p>
+                        <ul class="menu-list">
+                            <li style="margin-bottom: 5px;"><a class="is-active">Started</a></li>
+                            <li style="margin-bottom: 5px;"><a class="is-active">Extra</a></li>
+                            <li style="margin-bottom: 5px;"><a class="is-active">Elite</a></li>
+                            <li style="margin-bottom: 5px;">
+                              <a class="is-active">Your Way 
+                                <button onclick="muestra_oculta('aplicacion')"  class="button is-primary is-light is-small" style="margin-left: 50px;float: right;">+</button>
+                              </a> 
+                            </li>
+                        
+                        </ul>
+                    </aside>
+                    </p>
+                    <div id="aplicacion">
+                      <section class="hero is-info">
+                          <div class="hero">
+                            <p class="title">
+                              Programa para sacar Precios de equipos AT&T
+                            </p>
+                            <br></br>
+                            <p class="subtitle">
+                                Precio Total del Equipo en $:
+                                <input class="input is-primary" v-model.number="A" type="number" step="1" placeholder="Precio del Equipo" style="width: 200px;">
+                            </p>
+                            <p class="subtitle">
+                              Precio del Descuento en $:
+                              <input class="input is-primary" v-model.number="B" type="number" step="1" style="width: 200px;">
+                              TRADE IN
+                          </p>
+                          <p class="subtitle">
+                              Seleccione el Plan
+                          </p>
+                          <div class="select">
+                              <select  v-model="selected">
+                                  <option disabled value="">Selecciona el Plan</option>
+                                  <option>Starter</option>
+                                  <option>Extra</option>
+                                  <option>Elite</option>
+                              </select>
+                          </div>
+                          </div>
+                        </section>
+              
+                      <br>
+                      
+              
+                      <section class="hero is-link">
+                          <div class="hero">
+                            <p class="title">
+                              Unlimited Your Way
+                            </p>
+                            <p class="subtitle">
+                              <h2> Primer Bills: =  {{ PrimerBills() }} $</h2> 
+                              <h2> Segundo Bills: =  {{ SegundoBills() }} $ </h2>
+                              <h2> Tercer Bills: =  {{ TercerBills() }} $ </h2>
+                             
+                          <span>Seleccionado: {{ selected }}</span>
+                              </p>
+                          </div>
+                      </section>
+              
+                    </div>
+                  </div>
+                </section>
+                <section class="hero">
+                  <div class="principal">
+                    <p class="title">
+                      TRADE IN
+                      <button onclick="muestra_oculta('contenido4')"  class="button is-primary is-light is-small" style="margin-left: 50px;float: right;">+</button>
+                    </p>
+                  </div>
+                  <div id="contenido4" style="padding-left:100px;">
+          
+                   <img src="TRADEIN.png" alt="" height="700px" width="700px">
+                  </div>
+                </section>
+                <section class="hero">
+                  <div class="principal">
+                    <p class="title">
+                      CIERRE
+                      <button onclick="muestra_oculta('contenido5')"  class="button is-primary is-light is-small" style="margin-left: 50px;float: right;">+</button>
+                    </p>
+                  </div>
+                  <div id="contenido5">
+                    <p class="subtitle">
+                        <p class="title is-4">
+                            Cierre de directo
+                          </p>
+                        <p>
+                            “Entonces, ¿a qué dirección enviamos su primer lote?”
+                        </p>
+                        <br>
+                        <p class="title is-4">
+                            Cierre de la alternativa
+                        </p>
+                        <p>
+                            “Supongamos que decide quedarse con la americana; ¿la quiere en gris o en azul marino?​”
+                        </p>
+                        <br>
+                        <p class="title is-4">
+                            Cierre de ventas por amarre
+                        </p>
+                        <p>
+                            –“En los tiempos que corren, contar con un proveedor que le proporcione tantas facilidades es una gran ventaja, ¿no cree?”
+                        </p>
+                        <br>
+                        <p class="title is-4">
+                            Cierre de la dificultad
+                        </p>
+                        <p>
+                            “Puede pensárselo cuanto quiera... Solo que esta gama de cuchillos de cocina es de tan buena calidad que casi hemos agotado las existencias. Si no los encarga ahora, luego tal vez tenga que esperar de dos a tres meses para recibirlos...”
+                        </p>
+                        <br>
+                        <p class="title is-4">
+                            Cierre por equivocación
+                        </p>
+                        <p>
+                            – “Muy bien, pues le apunto aquí que necesita los muebles para el día 21, ¿no?”
+                        </p>
+                        <p>
+                            – “No, sería a partir del día 21, que es cuando me dan las llaves”.
+                        </p>
+                        <br>
+                        <p class="title is-4">
+                            Cierre imaginario
+                        </p>
+                        <p>
+                            -“En caso de adquirir este equipo de pesca, ¿lo usaría solo con sus amigos, o también con sus hijos?”, o “Si decide quedarse con el apartado de aire acondicionado, ¿dónde lo instalará?”
+                        </p>
+                        <br>
+                      </p>
+                                       
+                  </div>
+                </section>
+              </div>
+          </div>
+      </div>
+    
+    
+    </div>
+  
+    <div class="hero-foot">
+      <nav class="tabs is-boxed is-fullwidth">
+        <div class="container">
+          <ul>
+            <li class="is-active">
+              <a>Overview</a>
+            </li>
+            <li>
+              <a>Modifiers</a>
+            </li>
+            <li>
+              <a>Grid</a>
+            </li>
+            <li>
+              <a>Elements</a>
+            </li>
+            <li>
+              <a>Components</a>
+            </li>
+            <li>
+              <a>Layout</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </section>
+</body>
+<script type="text/javascript">
+  new Vue({
+      el:"#aplicacion",
+      data:{
+         A:0,
+         B:0,
+         selected:'',
+         plan:0,
+         segundo:0,
+         activacion:30,
+      },
+      methods: {
+          resta:function(){
+              return (this.A-this.B);
+          },
+          PrimerBills:function(){
+              primero= this.A / 30;
+              if (this.selected=="Starter") {
+                  this.plan= 75;
+                  this.segundo= 65;
+
+              }
+              else if (this.selected=="Extra") {
+                  this.plan= 85;
+                  this.segundo= 75;
+
+              }
+              if (this.selected=="Elite") {
+                  this.plan= 95;
+                  this.segundo= 85;
+
+              }
+              return primero + this.plan+this.activacion;
+          },
+          SegundoBills:function(){
+              return primero+ this.plan;
+          },
+          TercerBills:function(){
+              descuento=(this.A-this.B)/30;
+              return descuento + this.segundo;
+          },
+      },
+  });
+</script>
+</html>
