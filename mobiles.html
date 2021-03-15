@@ -140,48 +140,4 @@
     </div>
   </section>
 </body>
-<script type="text/javascript">
-  new Vue({
-      el:"#aplicacion",
-      data:{
-         A:0,
-         B:0,
-         selected:'',
-         plan:0,
-         segundo:0,
-         activacion:30,
-      },
-      methods: {
-          resta:function(){
-              return (this.A-this.B);
-          },
-          PrimerBills:function(){
-              primero= this.A / 30;
-              if (this.selected=="Starter") {
-                  this.plan= 75;
-                  this.segundo= 65;
-
-              }
-              else if (this.selected=="Extra") {
-                  this.plan= 85;
-                  this.segundo= 75;
-
-              }
-              if (this.selected=="Elite") {
-                  this.plan= 95;
-                  this.segundo= 85;
-
-              }
-              return primero + this.plan+this.activacion;
-          },
-          SegundoBills:function(){
-              return primero+ this.plan;
-          },
-          TercerBills:function(){
-              descuento=(this.A-this.B)/30;
-              return descuento + this.segundo;
-          },
-      },
-  });
-</script>
 </html>

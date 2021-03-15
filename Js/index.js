@@ -17,5 +17,10 @@ function muestra_oculta(id){
     muestra_oculta('contenido3');
     muestra_oculta('contenido4');
     muestra_oculta('contenido5');
+    muestra_oculta('contenido6');
+    muestra_oculta('aplicacion');
+    muestra_oculta('aplicacion0');
+    muestra_oculta('aplicacion1');
+    muestra_oculta('aplicacion2');
     var f = new Date();
   }

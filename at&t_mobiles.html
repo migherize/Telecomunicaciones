@@ -203,7 +203,7 @@
                       </section>
                   <div class="principal">
                     <p class="title">
-                      Precios
+                      Planes
                       <button onclick="muestra_oculta('contenido2')"  class="button is-primary is-light is-small" style="margin-left: 50px;float: right;">+</button>
                     </p>
                   </div>          
@@ -217,9 +217,60 @@
                           General
                        </p>
                         <ul class="menu-list">
-                            <li style="margin-bottom: 5px;"><a class="is-active">Started</a></li>
-                            <li style="margin-bottom: 5px;"><a class="is-active">Extra</a></li>
-                            <li style="margin-bottom: 5px;"><a class="is-active">Elite</a></li>
+                            <li style="margin-bottom: 5px;">
+                                <a class="is-active">Started <strong> 75$</strong>
+                                    <button onclick="muestra_oculta('aplicacion0')"  class="button is-primary is-light is-small" style="margin-left: 50px;float: right;height: 20px;">+</button>
+                                </a>
+                            </li>
+                            <div id="aplicacion0">
+                              <br>      
+                                    <ol style="margin-left: 50px;">
+                                      <li>LLamadas,texto,data ilimitada en EE.UU, Canadá y México.</li>
+                                      <li>Acceso 5G para dispositivos compatibles con la Red.</li>
+                                      <li>Definicion Standard para Streaming.</li>
+                                      <li>Texto ilimitado EE.UU. a más de 120 paises.</li>
+                                      <li>No tiene disponible Hotspot.</li>
+                                    </ol>
+                                   
+                              <br>
+                              </div>
+                            <li style="margin-bottom: 5px;">
+                                <a class="is-active">Extra <strong> 85$</strong>
+                                    <button onclick="muestra_oculta('aplicacion1')"  class="button is-primary is-light is-small" style="margin-left: 50px;float: right;">+</button>
+                                </a>
+                            </li>
+                            <div id="aplicacion1">
+                              <br>
+                                    <ol style="margin-left: 50px;">
+                                      <li>LLamadas,texto,data ilimitada en EE.UU, Canadá y México.</li>
+                                      <li>50 Gb de Premium Data por linea.</li>
+                                      <li>Acceso 5G para dispositivos compatibles con la Red.</li>
+                                      <li>15 Gb de datos de Hotspot.</li>
+                                      <li>Definicion Standard para Streaming.</li>
+                                      <li>Texto ilimitado EE.UU. a más de 120 paises.</li>
+                                      <li>Seguridad Advanced del dispositivo, bloqueo de fraude y alertas de riesgo de spam.</li>
+                                    </ol>
+                              <br>
+                              </div>
+                            <li style="margin-bottom: 5px;">
+                                <a class="is-active">Elite <strong> 95$</strong>
+                                    <button onclick="muestra_oculta('aplicacion2')"  class="button is-primary is-light is-small" style="margin-left: 50px;float: right;">+</button>
+                                </a>
+                            </li>
+                            <div id="aplicacion2">
+                              <br>
+                                <ol style="margin-left: 50px;">
+                                  <li>LLamadas,texto,data ilimitada en EE.UU, Canadá y México.</li>
+                                  <li>100 Gb de Premium Data por linea.</li>
+                                  <li>Acceso 5G para dispositivos compatibles con la Red.</li>
+                                  <li>30 Gb de datos de Hotspot.</li>
+                                  <li>Streaming HD disponible.</li>
+                                  <li>HBO Max incluido.</li>
+                                  <li>Texto ilimitado EE.UU. a más de 120 paises.</li>
+                                  <li>Seguridad Advanced del dispositivo, bloqueo de fraude y alertas de riesgo de spam.</li>
+                                </ol>
+                              <br>
+                              </div>
                             <li style="margin-bottom: 5px;">
                               <a class="is-active">Your Way 
                                 <button onclick="muestra_oculta('aplicacion')"  class="button is-primary is-light is-small" style="margin-left: 50px;float: right;">+</button>
@@ -229,55 +280,86 @@
                         </ul>
                     </aside>
                     </p>
-                    <div id="aplicacion">
-                      <section class="hero is-info">
-                          <div class="hero">
-                            <p class="title">
-                              Programa para sacar Precios de equipos AT&T
-                            </p>
-                            <br></br>
-                            <p class="subtitle">
-                                Precio Total del Equipo en $:
-                                <input class="input is-primary" v-model.number="A" type="number" step="1" placeholder="Precio del Equipo" style="width: 200px;">
-                            </p>
-                            <p class="subtitle">
-                              Precio del Descuento en $:
-                              <input class="input is-primary" v-model.number="B" type="number" step="1" style="width: 200px;">
-                              TRADE IN
-                          </p>
-                          <p class="subtitle">
-                              Seleccione el Plan
-                          </p>
-                          <div class="select">
-                              <select  v-model="selected">
-                                  <option disabled value="">Selecciona el Plan</option>
-                                  <option>Starter</option>
-                                  <option>Extra</option>
-                                  <option>Elite</option>
-                              </select>
+                  
+                            <div id="aplicacion">
+                              <section class="hero is-info">
+                                  <div class="hero">
+                                    <p class="title">
+                                      Programa para sacar Precios de equipos AT&T
+                                    </p>
+                                    <br></br>
+                                    <p class="subtitle">
+                                      Cantidad de Telefonos:
+                                        <input class="input is-primary" v-model.number="Num_telefono" type="number" step="1" placeholder="Cantidad" style="width: 200px;">
+                                        <input type="button" class="button is-link is-rounded" v-on:click="Telefonos" value="Enviar" name="" id="">
+                                      </p>
+                                    <div id="cantidad">
+                                        <div class="columns is-mobile">
+                                              <div v-for="(t,key) in telefono">
+                                                  <div class="column">
+                                                      <p class="subtitle">
+                                                          Equipo:
+                                                          <input class="input is-primary" v-model.number="Precio[key]" type="number" step="1" placeholder="Precio del Equipo" style="width: 200px;">
+                                                      </p>
+                                                      <p class="subtitle">
+                                                        Descuento:
+                                                          <input class="input is-primary" v-model.number="Descuento[key]" type="number" step="1" style="width: 200px;">
+                                                      </p>
+                                                      <p class="subtitle">
+                                                          Plan
+                                                      </p>
+                                                      <div class="select">
+                                                          <select  v-model="Plan[key]">
+                                                              <option disabled value="">Selecciona el Plan</option>
+                                                              <option>Starter</option>
+                                                              <option>Extra</option>
+                                                              <option>Elite</option>
+                                                          </select>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                                </section>
+                              <br>
+                              <section class="hero is-link">
+                                  <table class="table">
+                                      <thead>
+                                        <tr>
+                                          <th><abbr title="Position">Telefonos</abbr></th>
+                                          <th>Precio</th>
+                                          <th><abbr title="Played">Descuento</abbr></th>
+                                          <th><abbr title="Points">Plan</abbr></th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                        <tr v-for="(v, key) in array">
+                                            <th>{{ key+1 }}</th>
+                                            <td v-for="value in v">{{ value[key] }}</td>
+                                        </tr>
+                                      </tbody>
+                                  </table>
+                                  
+                              </section>
+                              <input type="button" class="button is-link is-rounded" style="width: 20%;text-align: center;" :disabled="calcular==false" v-on:click="Calcular" value="Calcular" name="" id="">
+                              <input type="button" class="button is-link is-rounded" style="width: 20%;text-align: center;"  v-on:click="Reinicio" value="Reinicio" name="" id="">
+                              <div class="hero">
+                                  <p class="title">
+                                    Unlimited Your Way
+                                  </p>
+                                  <p class="subtitle">
+                                    <h2> Primer Bills: =  {{ ResultadoA }} $</h2> 
+                                    <h2> Segundo Bills: =  {{ ResultadoB }} $ </h2>
+                                    <h2> Tercer Bills: =  {{ ResultadoC }} $ </h2>     
+                                    <h2>Plan Started : {{contadorStarted}}</h2>        
+                                    <h2>Plan Extra : {{contadorExtra}}</h2>        
+                                    <h2>Plan Elite : {{contadorElite}}</h2>    
+                                    <br>    
+                                    </p>
+                                </div>
+
                           </div>
-                          </div>
-                        </section>
-              
-                      <br>
-                      
-              
-                      <section class="hero is-link">
-                          <div class="hero">
-                            <p class="title">
-                              Unlimited Your Way
-                            </p>
-                            <p class="subtitle">
-                              <h2> Primer Bills: =  {{ PrimerBills() }} $</h2> 
-                              <h2> Segundo Bills: =  {{ SegundoBills() }} $ </h2>
-                              <h2> Tercer Bills: =  {{ TercerBills() }} $ </h2>
-                             
-                          <span>Seleccionado: {{ selected }}</span>
-                              </p>
-                          </div>
-                      </section>
-              
-                    </div>
                   </div>
                 </section>
                 <section class="hero">
@@ -350,6 +432,26 @@
                                        
                   </div>
                 </section>
+                <section class="hero">
+                  <div class="principal">
+                    <p class="title">
+                      Datos
+                      <button onclick="muestra_oculta('contenido6')"  class="button is-primary is-light is-small" style="margin-left: 50px;float: right;">+</button>
+                    </p>
+                  </div>
+                  <div id="contenido6">
+                    <ol style="margin-left: 50px;">
+                      <li>Primer nombre y Primer Apellido.</li>
+                      <li>Correo electrónico.</li>
+                      <li>Numero alterno.</li>
+                      <li>Dirección.</li>
+                      <li>Documento de identidad:SSN, ID o LICENCIA.    (Social, Itin Number)</li>
+                      <li>Fecha de nacimiento.</li>
+                      <li>Tarjete.</li>
+                    </ol>
+                                       
+                  </div>
+                </section>
               </div>
           </div>
       </div>
@@ -389,43 +491,168 @@
   new Vue({
       el:"#aplicacion",
       data:{
-         A:0,
-         B:0,
-         selected:'',
+         calcular:false,
          plan:0,
          segundo:0,
+         planS:0,
+         segundoS:0,
+         planEx:0,
+         segundoEx:0,
+         planEl:0,
+         segundoEl:0,
          activacion:30,
+         Num_telefono:1,
+         telefono:0,
+         Precio:[],
+         Descuento:[],
+         Plan:[],
+         array: [],
+         arrayStarted:[
+              { Lineas: 1,PrimerMes: 75, SegundoMes:  65  },
+              { Lineas: 2,PrimerMes: 140, SegundoMes: 120 },
+              { Lineas: 3,PrimerMes: 165, SegundoMes: 135 },
+              { Lineas: 4,PrimerMes: 180, SegundoMes: 140 },
+              { Lineas: 5,PrimerMes: 200, SegundoMes: 150 },
+              { Lineas: 6,PrimerMes: 240, SegundoMes: 180 },
+              { Lineas: 7,PrimerMes: 280, SegundoMes: 210 },
+              { Lineas: 8,PrimerMes: 320, SegundoMes: 240 },
+              { Lineas: 9,PrimerMes: 360, SegundoMes: 270 },
+              { Lineas: 10,PrimerMes: 400, SegundoMes:300 },
+          ],
+          arrayExtra:[
+              { Lineas: 1,PrimerMes: 85, SegundoMes: 75 },
+              { Lineas: 2,PrimerMes: 150, SegundoMes: 130 },
+              { Lineas: 3,PrimerMes: 180, SegundoMes: 150 },
+              { Lineas: 4,PrimerMes: 200, SegundoMes: 160 },
+              { Lineas: 5,PrimerMes: 225, SegundoMes: 175 },
+              { Lineas: 6,PrimerMes: 270, SegundoMes: 210 },
+              { Lineas: 7,PrimerMes: 315, SegundoMes: 245 },
+              { Lineas: 8,PrimerMes: 360, SegundoMes: 280 },
+              { Lineas: 9,PrimerMes: 405, SegundoMes: 315 },
+              { Lineas: 10,PrimerMes: 450, SegundoMes: 350 },
+          ],
+          arrayElite:[
+              { Lineas: 1,PrimerMes: 95, SegundoMes:  85 },
+              { Lineas: 2,PrimerMes: 170, SegundoMes:  150 },
+              { Lineas: 3,PrimerMes: 210, SegundoMes:  180 },
+              { Lineas: 4,PrimerMes: 240, SegundoMes:  200 },
+              { Lineas: 5,PrimerMes: 275, SegundoMes:  225 },
+              { Lineas: 6,PrimerMes: 300, SegundoMes:  240 },
+              { Lineas: 7,PrimerMes: 350, SegundoMes:  280 },
+              { Lineas: 8,PrimerMes: 400, SegundoMes:  320 },
+              { Lineas: 9,PrimerMes: 450, SegundoMes:  360 },
+              { Lineas: 10,PrimerMes: 500, SegundoMes: 400 },
+          ],
+          contadorStarted:0,
+          contadorExtra:0,
+          contadorElite:0,
+          ResultadoA:0,
+          ResultadoB:0,
+          ResultadoC:0,
       },
       methods: {
-          resta:function(){
-              return (this.A-this.B);
-          },
-          PrimerBills:function(){
-              primero= this.A / 30;
-              if (this.selected=="Starter") {
-                  this.plan= 75;
-                  this.segundo= 65;
-
+          Telefonos:function(event){
+              this.telefono = this.Num_telefono;
+              this.calcular = true;
+              for (let n= 0;n<this.Num_telefono;n++){
+                  var Equipos = {Precio:this.Precio, Descuento:this.Descuento,Plan:this.Plan}
+                  this.array.push(Equipos);
               }
-              else if (this.selected=="Extra") {
-                  this.plan= 85;
-                  this.segundo= 75;
-
+          },
+          Reinicio:function(){
+              this.intentos=0,
+              this.plan=0,
+              this.segundo=0,
+              this.planS=0,
+              this.segundoS=0,
+              this.planEx=0,
+              this.segundoEx=0,
+              this.planEl=0,
+              this.segundoEl=0,
+              this.activacion=30,
+              this.Num_telefono=1,
+              this.telefono=0,
+              this.Precio=[],
+              this.Descuento=[],
+              this.Plan=[],
+              this.array= [],
+              this.contadorStarted=0,
+              this.contadorExtra=0,
+              this.contadorElite=0,
+              this.ResultadoA=0,
+              this.ResultadoB=0,
+              this.ResultadoC=0;
+          },
+          Calcular:function(){
+              this.intentos= 2;
+              this.calcular= false;
+              //Started
+              for (i in this.Plan){
+                      //Started
+                      if (this.Plan[i]=="Starter"){
+                          this.contadorStarted= this.contadorStarted + 1
+                      }
+                      //Extra
+                      else if (this.Plan[i]=="Extra"){
+                      this.contadorExtra= this.contadorExtra + 1
+                      }
+                      //Elite
+                      else if (this.Plan[i]=="Elite"){
+                      this.contadorElite= this.contadorElite + 1
+                      }
+                  }
+              for (i in this.arrayStarted){
+                  //Started
+                  if (this.arrayStarted[i].Lineas==this.contadorStarted){
+                          this.planS= (this.arrayStarted[i].PrimerMes)/this.contadorStarted;
+                          this.segundoS= (this.arrayStarted[i].SegundoMes)/this.contadorStarted;
+                      }
               }
-              if (this.selected=="Elite") {
-                  this.plan= 95;
-                  this.segundo= 85;
-
+              for (i in this.arrayExtra){
+                  //Extra
+                  if (this.arrayExtra[i].Lineas==this.contadorExtra){
+                      this.planEx= (this.arrayExtra[i].PrimerMes)/this.contadorExtra;
+                      this.segundoEx= (this.arrayExtra[i].SegundoMes)/this.contadorExtra;
+                  }
               }
-              return primero + this.plan+this.activacion;
-          },
-          SegundoBills:function(){
-              return primero+ this.plan;
-          },
-          TercerBills:function(){
-              descuento=(this.A-this.B)/30;
-              return descuento + this.segundo;
-          },
+              for (i in this.arrayElite){
+                  //Elite
+                  if (this.arrayElite[i].Lineas==this.contadorElite){
+                      this.planEl= (this.arrayElite[i].PrimerMes)/this.contadorElite;
+                      this.segundoEl= (this.arrayElite[i].SegundoMes)/this.contadorElite;
+                  }
+              }
+              //Cuentas
+              for (let c = 0; c < this.telefono; c++) {
+                  console.log("c",c);    
+                  primero= this.Precio[c] / 30;
+                  if (this.Plan[c] == "Starter"){
+                      this.plan = this.planS;
+                      this.segundo = this.segundoS;
+                  }
+                  else if (this.Plan[c] == "Extra"){
+                      this.plan = this.planEx;
+                      this.segundo = this.segundoEx;
+                  }
+                  else if (this.Plan[c] == "Elite"){
+                      this.plan = this.planEl;
+                      this.segundo = this.segundoEl;
+                  }
+                  this.ResultadoA = this.ResultadoA + (primero + this.plan + this.activacion);
+                  this.ResultadoB = this.ResultadoB + (primero + this.plan);
+                  this.ResultadoC = this.ResultadoC + (((this.Precio[c]-this.Descuento[c])/30) + this.segundo);
+                  console.log("A", this.ResultadoA)
+                  console.log("B", this.ResultadoB)
+                  console.log("C", this.ResultadoC)
+                  console.log("S", this.contadorStarted)
+                  console.log("Ex", this.contadorExtra)
+                  console.log("El", this.contadorElite)
+                  console.log("Primeo",primero)
+                  console.log("Plan", this.plan)
+                  console.log("Descuento",(this.Precio[c] - this.Descuento[c])/30)
+              }
+              
+          }
       },
   });
 </script>
